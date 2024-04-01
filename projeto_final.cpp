@@ -14,18 +14,24 @@ int main(){
 
         string nome_funcionario; //utilizando string pois são palavras
         double cpf_funcionario;
+        string endereco_funcionario;
         string data_admissao_funcionario;
         string tipo_funcionario;
         int salario_base_funcionario;
         int hora_extra_funcionario;
+        int dia_trabalhado;
         const string tipo_funcionario_estagiario = "estagiario";
 
 
         cout<<"Digite o nome do funcionario: "<<endl;
         cin>>nome_funcionario;
 
-        cout<<"Digite o CPF do funcionario: ";
+        cout<<"Digite o CPF do funcionario: "<<endl;
         cin>>cpf_funcionario;
+
+        cout<<"Digite o endereco do funcionario: "<<endl;
+        cin.ignore(); // Limpa o buffer de entrada antes de getline()
+        getline(cin, endereco_funcionario);
 
         cout<<"Digite a data de admissao do funcionario: "<<endl;
         cin>>data_admissao_funcionario;
@@ -35,7 +41,18 @@ int main(){
 
         if(tipo_funcionario == tipo_funcionario_estagiario){
 
-            cout<<"E um estagiario";
+            const int salario_estagiario = 800;
+
+            cout<<"Digite quantos dias o funcioario foi trabalhar: ";
+            cin>>dia_trabalhado;
+
+            cout<<"Holerite de "<<nome_funcionario<<" :"<<endl;
+            cout<<"CPF: "<<cpf_funcionario<<endl;
+            cout<<"Endereco"<<endereco_funcionario<<endl;
+            cout<<"Data de admissao: "<<data_admissao_funcionario<<endl;
+            cout<<"Tipo de funcionario: "<<tipo_funcionario<<endl;
+            cout<<"Dias trabalhados: "<<dia_trabalhado<<endl;
+            cout<<"Salario: "<<salario_estagiario<<endl;
 
         }else{
 
