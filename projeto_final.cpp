@@ -26,7 +26,7 @@ int main(){
         const string tipo_funcionario_temporario = "temporario";
         const double desconto_previdenciario = 0.08;
         const double desconto_imposto_renda = 0.12;
-        double salario_base;
+        int salario_base;
         const char hora_extra_positivo = 'S';
         const char hora_extra_positivo_2 = 's';
         char resposta;
@@ -103,6 +103,26 @@ int main(){
                 cout<<"nao fez horas extras!";
 
             }
+        }else if(tipo_funcionario == tipo_funcionario_temporario){
+
+            cout<<"Digite o salario base do funcionario: ";
+            cin>>salario_base;
+
+            cout<<"Digite quantos dias o funcioario foi trabalhar: ";
+            cin>>dia_trabalhado;
+
+            double salario_dia_funcionario_temporario = salario_base/30;
+            
+            double salario_total_funcionario_temporario = salario_dia_funcionario_temporario*dia_trabalhado;
+            
+            cout<<"Holerite de "<<nome_funcionario<<" :"<<endl;
+            cout<<"CPF: "<<cpf_funcionario<<endl;
+            cout<<"Endereco"<<endereco_funcionario<<endl;
+            cout<<"Data de admissao: "<<data_admissao_funcionario<<endl;
+            cout<<"Tipo de funcionario: "<<tipo_funcionario<<endl;
+            cout<<"Dias trabalhados: "<<dia_trabalhado<<endl;
+            cout<<"Salario: "<<salario_total_funcionario_temporario<<endl;
+
         }
 
     }else{
