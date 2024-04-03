@@ -17,7 +17,7 @@ int main(){
         string endereco_funcionario;
         string data_admissao_funcionario;
         string tipo_funcionario;
-        int salario_base_funcionario;
+        double salario_base_funcionario;
         int hora_extra_funcionario;
         int dia_trabalhado;
         const string tipo_funcionario_estagiario = "estagiario";
