@@ -19,9 +19,18 @@ int main(){
         string tipo_funcionario;
         double salario_base_funcionario;
         int hora_extra_funcionario;
+        int valor_hora_extra_funcionario;
         int dia_trabalhado;
         const string tipo_funcionario_estagiario = "estagiario";
-
+        const string tipo_funcionario_efetivo = "efetivo";
+        const string tipo_funcionario_temporario = "temporario";
+        const double desconto_previdenciario = 0.08;
+        const double desconto_imposto_renda = 0.12;
+        double salario_base;
+        const char hora_extra_positivo = 'S';
+        const char hora_extra_positivo_2 = 's';
+        char resposta;
+        double valor_hora_extra;
 
         cout<<"Digite o nome do funcionario: "<<endl;
         cin>>nome_funcionario;
@@ -53,14 +62,47 @@ int main(){
             cout<<"Tipo de funcionario: "<<tipo_funcionario<<endl;
             cout<<"Dias trabalhados: "<<dia_trabalhado<<endl;
             cout<<"Salario: "<<salario_estagiario<<endl;
+      
+        }else if(tipo_funcionario == tipo_funcionario_efetivo){
 
-        }else{
+            cout<<"Digite o salario base do funcionario: ";
+            cin>>salario_base;
 
-            cout<<"Digite o salario base do funcionario: "<<endl;
-            cin>>salario_base_funcionario;
+            cout<<"O funcionario fez horas extras (S/N)? ";
+            cin>>resposta;
 
-            cout<<"Digite as horas extras do funcionario: "<<endl;
+            if(resposta == hora_extra_positivo || resposta == hora_extra_positivo_2){
+
+            cout<<"Qual o valor da hora extra?  ";
+            cin>>valor_hora_extra;
+
+            cout<<"Quantas horas extras esse funcionario fez? ";
             cin>>hora_extra_funcionario;
+
+            double valor_total_hora_extra = valor_hora_extra*hora_extra_funcionario;
+
+            double desconto_total_previdenciario = salario_base*desconto_previdenciario;
+            double desconto_total_imposto_renda = salario_base*desconto_imposto_renda;
+            double desconto_total_impostos = desconto_total_previdenciario+desconto_total_imposto_renda;
+
+            double salario_descontado = salario_base-desconto_total_impostos;
+
+            double salario_total = salario_descontado+valor_total_hora_extra;
+
+            cout<<"Holerite de "<<nome_funcionario<<" :"<<endl;
+            cout<<"CPF: "<<cpf_funcionario<<endl;
+            cout<<"Endereco"<<endereco_funcionario<<endl;
+            cout<<"Data de admissao: "<<data_admissao_funcionario<<endl;
+            cout<<"Tipo de funcionario: "<<tipo_funcionario<<endl;
+            cout<<"Dias trabalhados: "<<dia_trabalhado<<endl;
+            cout<<"Total de horas extras: "<<hora_extra_funcionario<<endl;
+            cout<<"Salario: "<<salario_total<<endl;
+
+            }else{
+
+                cout<<"nao fez horas extras!";
+
+            }
         }
 
     }else{
