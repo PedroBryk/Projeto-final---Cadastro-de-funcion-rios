@@ -7,13 +7,14 @@ int main(){
     const int senha_andre = 54321;
     int senha_digitada;
 
+    cout<<"Bem-vindo ao CalcMaster!"<<endl;
     cout<<"Digite sua senha de acesso: ";
     cin>>senha_digitada;
 
     if(senha_digitada == senha_pedro || senha_digitada == senha_andre){
 
         string nome_funcionario; //utilizando string pois são palavras
-        double cpf_funcionario;
+        string cpf_funcionario;
         string endereco_funcionario;
         string data_admissao_funcionario;
         string tipo_funcionario;
@@ -57,13 +58,16 @@ int main(){
 
             cout<<"Holerite de "<<nome_funcionario<<" :"<<endl;
             cout<<"CPF: "<<cpf_funcionario<<endl;
-            cout<<"Endereco"<<endereco_funcionario<<endl;
+            cout<<"Endereco: "<<endereco_funcionario<<endl;
             cout<<"Data de admissao: "<<data_admissao_funcionario<<endl;
             cout<<"Tipo de funcionario: "<<tipo_funcionario<<endl;
             cout<<"Dias trabalhados: "<<dia_trabalhado<<endl;
             cout<<"Salario: "<<salario_estagiario<<endl;
       
         }else if(tipo_funcionario == tipo_funcionario_efetivo){
+
+            cout<<"Digite quantos dias o funcioario foi trabalhar: ";
+            cin>>dia_trabalhado;
 
             cout<<"Digite o salario base do funcionario: ";
             cin>>salario_base;
@@ -100,7 +104,20 @@ int main(){
 
             }else{
 
-                cout<<"nao fez horas extras!";
+            double desconto_total_previdenciario = salario_base*desconto_previdenciario;
+            double desconto_total_imposto_renda = salario_base*desconto_imposto_renda;
+            double desconto_total_impostos = desconto_total_previdenciario+desconto_total_imposto_renda;
+
+            double salario_descontado = salario_base-desconto_total_impostos;
+
+            cout<<"Holerite de "<<nome_funcionario<<" :"<<endl;
+            cout<<"CPF: "<<cpf_funcionario<<endl;
+            cout<<"Endereco"<<endereco_funcionario<<endl;
+            cout<<"Data de admissao: "<<data_admissao_funcionario<<endl;
+            cout<<"Tipo de funcionario: "<<tipo_funcionario<<endl;
+            cout<<"Dias trabalhados: "<<dia_trabalhado<<endl;
+            cout<<"Total de horas extras: "<<hora_extra_funcionario<<endl;
+            cout<<"Salario: "<<salario_descontado<<endl;
 
             }
         }else if(tipo_funcionario == tipo_funcionario_temporario){
