@@ -1,19 +1,19 @@
-#include<iostream>
-using namespace std;
+#include<iostream> //Importação de uma biblioteca com o intuito de adicionar os operadores cout e cin
+using namespace std; //Itrodução de namespace com o intuito de organizar o código
 
-int main(){
+int main(){ //Adicionando a função principal
 
-    const int senha_pedro = 12345;
-    const int senha_andre = 54321;
-    int senha_digitada;
+    const int senha_pedro = 12345; //Decalarando a constante que contém a senha do Pedro
+    const int senha_andre = 54321; //Decalarando a constante que contém a senha do André
+    int senha_digitada; //Variável que futuramente irá armazenar a senha digitada pelo usuário
 
-    cout<<"Bem-vindo ao CalcMaster!"<<endl;
-    cout<<"Digite sua senha de acesso: ";
-    cin>>senha_digitada;
+    cout<<"Bem-vindo ao CalcMaster!"<<endl; //Exibição da mensagem de boas vindas ao programa
+    cout<<"Digite sua senha de acesso: "; //Obtenção da senha do usuário para validação futura
+    cin>>senha_digitada; //Armazena a senha digitada pelo usuário
 
-    if(senha_digitada == senha_pedro || senha_digitada == senha_andre){
+    if(senha_digitada == senha_pedro || senha_digitada == senha_andre){ //Verifica se a senha digitada corresponde a uma das senhas declaradas na constante
 
-        string nome_funcionario; //utilizando string pois são palavras
+        string nome_funcionario; //Declaração
         string cpf_funcionario;
         string endereco_funcionario;
         string data_admissao_funcionario;
